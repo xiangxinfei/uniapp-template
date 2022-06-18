@@ -1,0 +1,79 @@
+{ // ********vscode配置项*************
+  // 一个制表符等于2个空格
+  "editor.tabSize": 2,
+  // 控制折行的方式（在视区宽度处换行）
+  "editor.wordWrap": "on",
+  // 保存时自动格式化
+  "editor.formatOnSave": true,
+  // 键入一行后不自动格式化
+  "editor.formatOnType": false,
+  // 粘贴代码不自动格式化
+  "editor.formatOnPaste": false,
+  // 在保存时运行的代码操作类型(autoFixOnSave 设置已在eslint版本大于1.41.0的时候废弃了，采用下方新设置)
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
+  },
+  // 默认行尾字符是"\n"
+  "files.eol": "\n",
+  // 保存时，文件末尾插入一个最终新行
+  "files.insertFinalNewline": true,
+  // 保存时，删除行尾空格
+  "files.trimTrailingWhitespace": true,
+  // 在函数名后面不加上括号，类似这种形式 foo() {}
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+  // ********emmet配置项*************
+  // 在默认不受支持的语言中启用 Emmet 缩写。在此语言和 Emmet 支持的语言之间添加映射
+  "emmet.includeLanguages": {
+    "wxml": "html",
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+  // 为指定的语法定义配置文件或使用带有特定规则的配置文件
+  // emmet默认按html格式解析，但是新版emmet不支持vue文件默认html解析，因此做以下处理：
+  "emmet.syntaxProfiles": {
+    "vue-html": "html",
+    "vue": "html"
+  },
+  // ********vetur配置项*************
+  // 指定<style lang='scss'>区域格式化使用 prettier
+  "vetur.format.defaultFormatter.scss": "prettier",
+  // 指定<template>区域格式化使用 prettyhtml
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  // 指定<script>区域格式化使用 prettier
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  // 所有默认格式化程序的选项
+  "vetur.format.defaultFormatterOptions": {
+    "prettyhtml": {
+      "printWidth": 120, // 超过最大值换行
+      "tabWidth": 2, // 缩进字节数
+      "useTabs": false, // 缩进不使用tab，使用空格
+      "singleQuote": false, // 使用单引号代替双引号
+      "wrapAttributes": true, // 属性自动换行
+      "sortAttributes": true // 属性自动开启排序
+    }
+  },
+  // styleLint样式格式化（小程序）
+  "stylelint.autoFix": true,
+  // 指定 *.vue 文件的格式化工具为vetur，防止和prettier冲突
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  // ********eslint配置项*************
+  // 开启eslint校验
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+  //在“快速修复”菜单中显示“打开lint规则文档”网页
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.alwaysShowStatus": true,
+  // 数组配置的语言要通过eslint验证，如果没安装，eslint将显示错误
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue"
+  ],
+  // 将所有的空格符、制表符等全部都渲染出来
+  "editor.renderWhitespace": "all",
+}
