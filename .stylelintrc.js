@@ -12,6 +12,7 @@ module.exports = {
       }
     ],
     "selector-type-no-unknown": null, // 不允许未知类型选择器
+    "selector-pseudo-element-no-unknown": null,
     "rule-empty-line-before": [ // 不允许rules前空一行
       "always",
       {
