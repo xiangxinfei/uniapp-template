@@ -14,4 +14,15 @@ export default {
 
 <style lang="scss">
 @import "uview-ui/index.scss";
+
+view,
+scroll-view,
+swiper,
+movable-area,
+cover-view,
+navigator,
+text,
+button {
+  box-sizing: border-box;
+}
 </style>
