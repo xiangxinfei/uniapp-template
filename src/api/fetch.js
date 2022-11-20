@@ -8,11 +8,14 @@ export default class Fetch {
    * @param {*} params 参数
    * @return {promise}
    */
-  static get(url, params) {
+  static get(url, params, option = {}) {
     return new Promise((resolve, reject) => {
       uni.request({
         url: Config.prefix + url,
         data: { ...params },
+        header: {
+          'Authorization': option?.token ? option.token : ''
+        },
         success(result) {
           if (result.statusCode === 200 && result.data.code === 0) {
             resolve(result.data)
@@ -33,14 +36,15 @@ export default class Fetch {
    * @param {*} params 参数
    * @return {promise}
    */
-  static post(url, params) {
+  static post(url, params, option = {}) {
     return new Promise((resolve, reject) => {
       uni.request({
         url: Config.prefix + url,
         data: { ...params },
         method: 'POST',
         header: {
-          'content-type': 'application/x-www-form-urlencoded',
+          'content-type': 'application/json',
+          'Authorization': option?.token ? option.token : ''
         },
         success(result) {
           if (result.statusCode === 200 && result.data.code === 0) {
